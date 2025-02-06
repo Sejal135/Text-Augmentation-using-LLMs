@@ -2,7 +2,7 @@
 # Text Augmentation Using Large Language Models (LLMs)
 
 ## Introduction
-This project explores the potential of leveraging Large Language Models (LLMs) such as GPT-2 to augment text data for handling class imbalance in text classification tasks. Using the AG News dataset, class imbalances were deliberately introduced to evaluate how LLM-based text augmentation compares against traditional methods like SMOTE in improving model performance.
+This project explores the potential of leveraging Large Language Models (LLMs) such as Meta's llama 3b 70b to augment text data for handling class imbalance in text classification tasks. Using the AG News dataset, class imbalances were deliberately introduced to evaluate how LLM-based text augmentation compares against traditional methods like SMOTE in improving model performance.
 
 ## Table of Contents
 1. [Introduction](#introduction)
@@ -34,7 +34,7 @@ The project uses the AG News dataset:
 - **Class Imbalance Handling:** Investigates four imbalance creation techniques: severe under-sampling, topic-specific sampling, clustered minority sampling, and progressive rarity imbalances.
 - **Augmentation Methods:**
   - Traditional: SMOTE
-  - Advanced: LLM-generated synthetic text using GPT-2.
+  - Advanced: LLM-generated synthetic text using llama 3b 70b.
 - **Model Training:** Logistic Regression and Support Vector Machines (SVM) trained with TF-IDF vectorization.
 - **Evaluation Metrics:** Accuracy, Precision, Recall, and F1-score.
 
@@ -45,7 +45,7 @@ The project uses the AG News dataset:
 
 ### Augmentation
 - **SMOTE:** Generates synthetic samples for minority classes using interpolation.
-- **LLM (GPT-2):** Contextually prompted synthetic text generation tailored for each imbalance type.
+- **LLM (llama 3b 70b):** Contextually prompted synthetic text generation tailored for each imbalance type.
 
 ### Model Training
 - Logistic Regression and SVM were optimized using GridSearchCV for hyperparameter tuning and stratified cross-validation to ensure robust performance across classes.
@@ -70,7 +70,7 @@ The project uses the AG News dataset:
    ```bash
    python create_imbalance.py --input data/processed.csv --method "clustered"
    ```
-3. Augment data using GPT-2:
+3. Augment data using llama 3b 70b:
    ```bash
    python augment_llm.py --input data/imbalanced.csv --output data/augmented.csv
    ```
@@ -84,7 +84,7 @@ The project uses the AG News dataset:
 - **Imbalanced Dataset:** Performance on minority classes dropped significantly, with recalls often below 0.5.
 - **Augmentation Results:**
   - SMOTE improved metrics but struggled in nuanced imbalance scenarios.
-  - GPT-2 augmentation achieved superior recall (~88.4%) and F1-scores, especially for progressive rarity imbalances.
+  - llama 3b 70b augmentation achieved superior recall (~88.4%) and F1-scores, especially for progressive rarity imbalances.
   
 A detailed comparison of augmentation techniques showed that LLMs produced more semantically coherent and contextually diverse synthetic samples.
 
