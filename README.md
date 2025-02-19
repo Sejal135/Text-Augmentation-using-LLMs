@@ -2,7 +2,7 @@
 # Text Augmentation Using Large Language Models (LLMs)
 
 ## Introduction
-This project explores the potential of leveraging Large Language Models (LLMs) such as Meta's llama 3b 70b to augment text data for handling class imbalance in text classification tasks. Using the AG News dataset, class imbalances were deliberately introduced to evaluate how LLM-based text augmentation compares against traditional methods like SMOTE in improving model performance.
+This project explores the potential of leveraging Large Language Models (LLMs) such as Meta's llama 2-70b to augment text data for handling class imbalance in text classification tasks. Using the AG News dataset, class imbalances were deliberately introduced to evaluate how LLM-based text augmentation compares against traditional methods like SMOTE in improving model performance.
 
 ## Table of Contents
 1. [Introduction](#introduction)
@@ -45,7 +45,7 @@ The project uses the AG News dataset:
 
 ### Augmentation
 - **SMOTE:** Generates synthetic samples for minority classes using interpolation.
-- **LLM (llama 3b 70b):** Contextually prompted synthetic text generation tailored for each imbalance type.
+- **LLM (Meta's llama 2-70b):** Contextually prompted synthetic text generation tailored for each imbalance type.
 
 ### Model Training
 - Logistic Regression and SVM were optimized using GridSearchCV for hyperparameter tuning and stratified cross-validation to ensure robust performance across classes.
